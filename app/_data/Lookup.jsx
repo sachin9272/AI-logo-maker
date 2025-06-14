@@ -6,7 +6,7 @@ export default{
     LogoTitle: 'Logo Title',
     LogoTitleDesc:'Add Your Business, App, or Website Name for a Custome Logo',
     LogoDescTitle:'Describe your Logo Vision',
-    LogoDescDesc: 'Share your ideas, themes, or inspirations to create',
+    LogoDescDesc: 'Share your ideas, themes, or inspirations to create a logo that perfectiy represents your brand or project',
     LogoIdeaTitle:'Select Your Design Idea',
     LogoIdeaDesc:'Choose a design style that aligns with your vision, ',
     LogoDesignTitle:'Choose Your Logo Style',

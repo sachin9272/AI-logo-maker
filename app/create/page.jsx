@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import LogoTitle from "./_components/LogoTitle";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LogoDesc from "./_components/LogoDesc";
+import LogoColorPallete from "./_components/LogoPallete";
+import LogoDesigns from "./_components/LogoDesigns";
+import LogoIdea from "./_components/LogoIdea";
 
 const CreateLogo = () => {
   const [step, setStep] = useState(1);
@@ -21,15 +25,26 @@ const CreateLogo = () => {
         <LogoTitle
           onHandleInputChange={(v) => onHandleInputChange("title", v)}
         />
+      ) : step == 2 ? (
+        <LogoDesc onHandleInputChange={(v) => onHandleInputChange("desc", v)} />
+      ) : step == 3 ? (
+        <LogoColorPallete
+          onHandleInputChange={(v) => onHandleInputChange("palette", v)}
+        />
+      ) : step == 4 ? (
+        <LogoDesigns
+          onHandleInputChange={(v) => onHandleInputChange("design", v)}
+        />
+      ) : step == 5 ? (
+        <LogoIdea onHandleInputChange={(v) => onHandleInputChange("idea", v)} />
       ) : null}
       <div className="flex justify-between items-center">
         {step != 1 && (
-          <Button onClick={(prev) => setStep(prev - 1)} variant="outline">
-           { console.log('Prev-->', state)}
+          <Button onClick={() => setStep(step - 1)} variant="outline">
             <ArrowLeft /> Previous
           </Button>
         )}
-        <Button onClick={(prev) => setStep(prev + 1)}>
+        <Button onClick={() => setStep(step + 1)}>
           Continue <ArrowRight />
         </Button>
       </div>
