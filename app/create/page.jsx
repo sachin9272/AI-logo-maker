@@ -7,6 +7,7 @@ import LogoDesc from "./_components/LogoDesc";
 import LogoColorPallete from "./_components/LogoPallete";
 import LogoDesigns from "./_components/LogoDesigns";
 import LogoIdea from "./_components/LogoIdea";
+import PricingModel from "./_components/PricingModel";
 
 const CreateLogo = () => {
   const [step, setStep] = useState(1);
@@ -24,20 +25,33 @@ const CreateLogo = () => {
       {step == 1 ? (
         <LogoTitle
           onHandleInputChange={(v) => onHandleInputChange("title", v)}
+          formData={formData}
         />
       ) : step == 2 ? (
-        <LogoDesc onHandleInputChange={(v) => onHandleInputChange("desc", v)} />
+        <LogoDesc onHandleInputChange={(v) => onHandleInputChange("desc", v)} 
+        formData={formData}
+        />
       ) : step == 3 ? (
         <LogoColorPallete
           onHandleInputChange={(v) => onHandleInputChange("palette", v)}
+          formData={formData}
         />
       ) : step == 4 ? (
         <LogoDesigns
           onHandleInputChange={(v) => onHandleInputChange("design", v)}
+          formData={formData}
         />
       ) : step == 5 ? (
-        <LogoIdea onHandleInputChange={(v) => onHandleInputChange("idea", v)} />
-      ) : null}
+        <LogoIdea onHandleInputChange={(v) => onHandleInputChange("idea", v)} 
+        formData={formData}
+        />
+      ): step == 6 ? (
+        <PricingModel
+        formData={formData}
+        onHandleInputChange={(v)=>onHandleInputChange('pricing', v)}
+        />
+      )
+      : null}
       <div className="flex justify-between items-center">
         {step != 1 && (
           <Button onClick={() => setStep(step - 1)} variant="outline">
