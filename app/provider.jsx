@@ -18,6 +18,10 @@ const Provider = ({ children }) => {
       userEmail: user?.primaryEmailAddress?.emailAddress
     });
     console.log(result.data);
+    // change as requirement
+    if(result){
+      
+    }
   }
   
   return (
